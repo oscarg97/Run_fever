@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/aqui.unity
+- path: Assets/RunFever.unity
   isLoaded: 1
   isActive: 1
