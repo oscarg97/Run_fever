@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class Game_controller : MonoBehaviour {
 
-    public float parallaxSpeed = 0.02f;
+    //public float parallaxSpeed = 0.02f;
     public RawImage background;
-    public RawImage platform1;
+    public RawImage fondo;
+    /*public RawImage platform1;
     public RawImage platform2;
     public RawImage platform3;
 	public RawImage platform11;
-	public RawImage platform21;
+	public RawImage platform21;*/
     public enum GameState { Idle, Playing };
 	private GameState gameState = GameState.Idle;
     // Use this for initialization
@@ -25,11 +26,12 @@ public class Game_controller : MonoBehaviour {
 		if ((Input.GetKeyDown ("up") || Input.GetMouseButtonDown (0))) {
 			gameState = GameState.Playing;
 		} else if (gameState == GameState.Playing) {
-			parallax (background);
+			parallax (background, 0.02f);
+            parallax(fondo, 0.03f);
 		}
 	}
-	void parallax (RawImage image){
-		float finalSpeed = parallaxSpeed * Time.deltaTime;
+	void parallax (RawImage image, float parallaxTime){
+		float finalSpeed = parallaxTime * Time.deltaTime;
 		image.uvRect = new Rect (image.uvRect.x + finalSpeed, 0f, 1f, 1f);
 	}
 }
