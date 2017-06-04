@@ -26,11 +26,6 @@ public class Game_controller : MonoBehaviour {
 			gameState = GameState.Playing;
 		} else if (gameState == GameState.Playing) {
 			parallax (background);
-			parallax (platform1);
-			parallax (platform11);
-			parallax (platform2);
-			parallax (platform21);
-			parallax (platform3);
 		}
 	}
 	void parallax (RawImage image){
